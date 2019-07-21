@@ -1,6 +1,6 @@
 {
   "name": "testcafe-reporter-nunit3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nunit3 TestCafe reporter plugin.",
   "repository": "https://github.com/NickLargen/testcafe-reporter-nunit3",
   "author": {
@@ -40,5 +40,7 @@
     "read-file-relative": "^1.2.0",
     "testcafe": "^0.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "handlebars": "4.1.2"
+  }
 }
