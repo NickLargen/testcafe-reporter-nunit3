@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<test-run id="2" name="TestCafe Tests" start-time="1970-01-01T00:00:00.000Z" end-time="1970-01-01T00:15:25.000Z">
+    <test-suite type="Assembly" name="First fixture" start-time="2019-07-21T22:26:27.156Z" end-time="2019-07-21T22:26:27.162Z">
+        <test-case name="First test in first fixture" fullname="First fixture - First test in first fixture" result="Inconclusive" duration="74">
+            <attachments>
+                <attachment>
+                    <filePath>C:/screenshots/1445437598847/1.png</filePath>
+                </attachment>
+                <attachment>
+                    <filePath>C:/screenshots/1445437598847/2.png</filePath>
+                </attachment>
+            </attachments>
+        </test-case>
+        <test-case name="Second test in first fixture" fullname="First fixture - Second test in first fixture" result="Failed" duration="74">
+            <failure>
+                <message>
+                    <![CDATA[Some error
+]]>
+                </message>
+                <stack-trace>
+                    <![CDATA[-- Error on page "http://example.org":
+⠀
+   Some error
+⠀
+   Browser: Chrome 41.0.2227 / Mac OS X 10.10.1
+⠀
+-- The specified selector does not match any element in the DOM tree.
+⠀
+   Browser: Firefox 47 / Mac OS X 10.10.1]]>
+                </stack-trace>
+            </failure>
+        </test-case>
+        <test-case name="Third test in first fixture" fullname="First fixture - Third test in first fixture" result="Passed" duration="74">
+        </test-case>
+    </test-suite>
+    <test-suite type="Assembly" name="Second fixture" start-time="2019-07-21T22:26:27.162Z" end-time="2019-07-21T22:26:27.162Z">
+        <test-case name="First test in second fixture" fullname="Second fixture - First test in second fixture" result="Passed" duration="74">
+        </test-case>
+        <test-case name="Second test in second fixture" fullname="Second fixture - Second test in second fixture" result="Passed" duration="74">
+        </test-case>
+        <test-case name="Third test in second fixture" fullname="Second fixture - Third test in second fixture" result="Passed" duration="0">
+        </test-case>
+    </test-suite>
+    <test-suite type="Assembly" name="Third fixture" start-time="2019-07-21T22:26:27.162Z" end-time="2019-07-21T22:26:27.163Z">
+        <test-case name="First test in third fixture" fullname="Third fixture - First test in third fixture" result="Failed" duration="74">
+            <failure>
+                <message>
+                    <![CDATA[]]>
+                </message>
+                <stack-trace>
+                    <![CDATA[-- - Error in beforeEach hook -
+   The specified selector does not match any element in the DOM tree.
+⠀
+   Browser: Firefox 47 / Mac OS X 10.10.1]]>
+                </stack-trace>
+            </failure>
+        </test-case>
+    </test-suite>
+</test-run>
