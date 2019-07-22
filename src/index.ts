@@ -85,7 +85,7 @@ class TestCaseData {
         this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
         this.errorMessage = testRunInfo.errs.map(err => err.errMsg).join('\n');
 
-        if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 0) {
+        if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {
             if (this.errorMessage) {
                 this.errorMessage += '\n\n';
             }
