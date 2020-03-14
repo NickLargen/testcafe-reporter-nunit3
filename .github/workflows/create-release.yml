@@ -24,10 +24,10 @@ jobs:
               name: Publish to NPM
               env:
                   npm_config_registry: https://registry.npmjs.org/
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
             - run: npm publish
               name: Publish to GitHub Packages
               env:
                   npm_config_registry: https://npm.pkg.github.com/
-                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
