@@ -13,6 +13,8 @@
   "scripts": {
     "commit": "git-cz",
     "test": "gulp test",
+    "build": "gulp build",
+    "preview": "gulp preview",
     "publish-please": "publish-please",
     "prepublish": "publish-please guard"
   },
@@ -41,6 +43,7 @@
     "normalize-newline": "^3.0.0",
     "publish-please": "^5.4.3",
     "read-file-relative": "^1.2.0",
+    "semantic-release": "17.0.4",
     "testcafe": "^0.9.0"
   },
   "dependencies": {
