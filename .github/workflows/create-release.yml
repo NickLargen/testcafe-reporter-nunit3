@@ -13,7 +13,6 @@ jobs:
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
-                  registry-url: https://registry.npmjs.org/
             - run: npm ci
             - run: npm test
             - run: npx semantic-release
@@ -24,14 +23,11 @@ jobs:
             - run: npm publish
               name: Publish to NPM
               env:
+                  npm_config_registry: https://registry.npmjs.org/
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-            - uses: actions/setup-node@v1
-              name: Configure GitHub as the registry
-              with:
-                  node-version: 12
-                  registry-url: https://npm.pkg.github.com/
             - run: npm publish
               name: Publish to GitHub Packages
               env:
+                  npm_config_registry: https://npm.pkg.github.com/
                   NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
