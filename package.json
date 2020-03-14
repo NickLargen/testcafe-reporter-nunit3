@@ -47,7 +47,7 @@
     "testcafe": "^0.9.0"
   },
   "dependencies": {
-    "handlebars": "4.1.2"
+    "handlebars": "4.7.3"
   },
   "config": {
     "commitizen": {
