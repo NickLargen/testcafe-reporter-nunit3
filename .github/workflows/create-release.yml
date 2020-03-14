@@ -27,10 +27,10 @@ jobs:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
             - uses: actions/setup-node@v1
+              name: Configure GitHub as the registry
               with:
                   node-version: 12
                   registry-url: https://npm.pkg.github.com/
-                  scope: "@NickLargen"
             - run: npm publish
               name: Publish to GitHub Packages
               env:
