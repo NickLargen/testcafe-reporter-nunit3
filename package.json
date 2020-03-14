@@ -1,7 +1,7 @@
 {
   "name": "testcafe-reporter-nunit3",
   "version": "1.0.3",
-  "description": "nunit3 TestCafe reporter plugin.",
+  "description": "NUnit 3 TestCafe reporter plugin that supports screenshot attachments.",
   "repository": "https://github.com/NickLargen/testcafe-reporter-nunit3",
   "author": {
     "name": "Nick Largen"
@@ -23,9 +23,10 @@
     "reporter",
     "plugin",
     "nunit",
-    "nunit3"
+    "nunit3",
+    "azure devops"
   ],
-  "license": "MIT",
+  "license": "MIT-0",
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
