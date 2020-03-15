@@ -28,7 +28,7 @@ export = function() {
 
     reportTestDone(name: string, testRunInfo: TestRunInfo, meta: Metadata) {
       // @ts-ignore
-      const errorDetails = testRunInfo.errs.map(err => this.formatError(err, '-- ')).join('\n\n') || '';
+      const errorDetails = testRunInfo.errs.map(err => this.formatError(err, '❌ ')).join('\n\n') || '';
       // Screenshot paths are included as attachments
       const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n/gm, '');
       // Prevent well meaning trim()s from disturbing the formatting
