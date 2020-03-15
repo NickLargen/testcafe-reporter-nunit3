@@ -14,7 +14,7 @@
         [
             "@semantic-release/exec",
             {
-                "successCmd": "::set-env name=RELEASE_CREATED::true"
+                "successCmd": "echo \"::set-env name=RELEASE_CREATED::true\""
             }
         ]
     ]
