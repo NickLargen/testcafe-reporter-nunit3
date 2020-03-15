@@ -14,7 +14,7 @@
         [
             "@semantic-release/exec",
             {
-                "successCmd": "export RELEASE_CREATED=true"
+                "successCmd": "::set-env name=RELEASE_CREATED::true"
             }
         ]
     ]
