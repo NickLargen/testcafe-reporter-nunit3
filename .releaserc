@@ -10,6 +10,12 @@
             }
         ],
         "@semantic-release/git",
-        "@semantic-release/github"
+        "@semantic-release/github",
+        [
+            "@semantic-release/exec",
+            {
+                "successCmd": "export RELEASE_CREATED=true"
+            }
+        ]
     ]
 }
