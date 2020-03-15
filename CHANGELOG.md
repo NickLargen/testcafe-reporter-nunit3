@@ -1,3 +1,10 @@
+# [1.1.0-beta.2](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2020-03-15)
+
+
+### Bug Fixes
+
+* use GitHub syntax for sharing environment variables between steps ([2e8b371](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/2e8b3714d39c703eb7d863dc652046cb6e01dde4))
+
 # [1.1.0-beta.1](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.0.12...v1.1.0-beta.1) (2020-03-15)
 
 
