@@ -1,3 +1,10 @@
+# [1.1.0-beta.1](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.0.12...v1.1.0-beta.1) (2020-03-15)
+
+
+### Features
+
+* test ci configuration with a prerelease minor version bump ([3125801](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/3125801371440effbe8437b7a6b66c87c9a9dd61))
+
 ## [1.0.5 -> 1.0.12](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.0.4...v1.0.12) (2020-03-15)
 
 -   Play around with CI configuration
