@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "./lib",
+    "strict": true,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "declaration": false,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "importHelpers": true,
+    "target": "ES5"
+  },
+  "include": ["src"]
+}

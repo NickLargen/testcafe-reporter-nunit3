@@ -1,15 +1,18 @@
-var TestRunErrorFormattableAdapter = require('testcafe').embeddingUtils.TestRunErrorFormattableAdapter;
-var UncaughtErrorOnPage = require('testcafe').embeddingUtils.testRunErrors.UncaughtErrorOnPage;
-var ActionElementNotFoundError = require('testcafe').embeddingUtils.testRunErrors.ActionElementNotFoundError;
-var testCallsite = require('./test-callsite');
+const TestRunErrorFormattableAdapter = require('testcafe').embeddingUtils.TestRunErrorFormattableAdapter;
+const UncaughtErrorOnPage = require('testcafe').embeddingUtils.testRunErrors.UncaughtErrorOnPage;
+const ActionElementNotFoundError = require('testcafe').embeddingUtils.testRunErrors.ActionElementNotFoundError;
+const testCallsite = require('./test-callsite');
 
-function makeErrors(errDescrs) {
+function makeErrors(errDescrs: Array<ErrorDescription>) {
   return errDescrs.map(function(descr) {
     return new TestRunErrorFormattableAdapter(descr.err, descr.metaInfo);
   });
 }
 
-export const sampleCalls = [
+export type CallSequence = Array<{ method: string; args: Array<any> }>;
+export type ErrorDescription = { err: any; metaInfo: { [key: string]: any } };
+
+export const sampleCalls: CallSequence = [
   {
     method: 'reportTaskStart',
     args: [new Date('1970-01-01T00:00:00.000Z'), ['Chrome 41.0.2227 / Mac OS X 10.10.1', 'Firefox 47 / Mac OS X 10.10.1'], 7],
@@ -178,7 +181,7 @@ export const sampleCalls = [
   },
 ];
 
-export const demoFruitCalls = [
+export const demoFruitCalls: CallSequence = [
   {
     method: 'reportTaskStart',
     args: [new Date('1970-03-14T15:27:12.448Z'), ['Chrome 80.0.3987.132 / Windows 10'], 4],

@@ -1,18 +1,23 @@
-import template from './template';
 import { CallsiteRecord } from 'callsite-record';
+import { readFileSync } from 'fs';
+import * as path from 'path';
+import * as Handlebars from 'handlebars';
+
+const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'UTF-8'));
 
 type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
 
-export default function() {
+export = function() {
   return {
     noColors: true,
-    taskData: null,
+    taskData: (null as unknown) as TaskData,
 
     reportTaskStart(startTime: Date, userAgents: string[], testCount: number) {
       this.taskData = new TaskData(startTime.toISOString());
     },
 
     reportFixtureStart(name: string, path: string, meta: Metadata) {
+      // @ts-ignore
       this.taskData.handleFixtureStart(this.escapeHtml(name), path, meta);
     },
 
@@ -22,26 +27,29 @@ export default function() {
     },
 
     reportTestDone(name: string, testRunInfo: TestRunInfo, meta: Metadata) {
+      // @ts-ignore
       const errorDetails = testRunInfo.errs.map(err => this.formatError(err, '-- ')).join('\n\n') || '';
       // Screenshot paths are included as attachments
       const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n/gm, '');
       // Prevent well meaning trim()s from disturbing the formatting
       const u2800SpacingHack = withoutScreenshot.replace(/^( *) ([> ] \d+ \|)/gm, '$1⠀$2').replace(/\n\n/g, '\n⠀\n');
+      // @ts-ignore
       this.taskData.handleTestDone(this.escapeHtml(name), testRunInfo, meta, u2800SpacingHack);
     },
 
     reportTaskDone(endTime: Date, passed: number, warnings: string[], result: TaskResult) {
       this.taskData.handleTaskDone(endTime.toISOString(), passed, warnings, result);
 
+      // @ts-ignore
       this.write(template(this.taskData));
     },
   };
-}
+};
 
 class TaskData {
   fixtures: FixtureData[];
-  currentFixture: FixtureData;
-  endTime: string;
+  currentFixture!: FixtureData;
+  endTime?: string;
 
   constructor(public startTime: string) {
     this.fixtures = [];
@@ -68,7 +76,7 @@ class TaskData {
 class FixtureData {
   testCases: TestCaseData[];
   startTime: string;
-  endTime: string;
+  endTime?: string;
 
   constructor(public name: string, public path: string, private meta: Metadata) {
     this.startTime = new Date().toISOString();

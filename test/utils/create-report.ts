@@ -1,16 +1,18 @@
-var buildReporterPlugin = require('testcafe').embeddingUtils.buildReporterPlugin;
-var pluginFactory = require('../../lib');
+import { CallSequence } from './reporter-test-calls';
 
-export function createReport(reporterTestCalls: Array<{ method: string; args: Array<any> }>) {
-  var outStream = {
+const buildReporterPlugin = require('testcafe').embeddingUtils.buildReporterPlugin;
+const pluginFactory = require('../../lib');
+
+export function createReport(reporterTestCalls: CallSequence) {
+  const outStream = {
     data: '',
 
-    write: function(text) {
+    write: function(text: string) {
       this.data += text;
     },
   };
 
-  var plugin = buildReporterPlugin(pluginFactory, outStream);
+  const plugin = buildReporterPlugin(pluginFactory, outStream);
 
   reporterTestCalls.forEach(function(call) {
     plugin[call.method].apply(plugin, call.args);
