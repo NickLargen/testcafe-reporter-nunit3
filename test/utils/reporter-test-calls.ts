@@ -1,7 +1,9 @@
+import { testCallsiteVariableLineNumberLength, testCallsiteAllLinesTwoDigitNumbers } from './test-callsite';
+
 const TestRunErrorFormattableAdapter = require('testcafe').embeddingUtils.TestRunErrorFormattableAdapter;
 const UncaughtErrorOnPage = require('testcafe').embeddingUtils.testRunErrors.UncaughtErrorOnPage;
+const ExternalAssertionLibraryError = require('testcafe').embeddingUtils.testRunErrors.ExternalAssertionLibraryError;
 const ActionElementNotFoundError = require('testcafe').embeddingUtils.testRunErrors.ActionElementNotFoundError;
-const testCallsite = require('./test-callsite');
 
 function makeErrors(errDescrs: Array<ErrorDescription>) {
   return errDescrs.map(function(descr) {
@@ -61,7 +63,7 @@ export const sampleCalls: CallSequence = [
             metaInfo: {
               userAgent: 'Chrome 41.0.2227 / Mac OS X 10.10.1',
               screenshotPath: '/screenshots/1445437598847/errors',
-              callsite: testCallsite,
+              callsite: testCallsiteVariableLineNumberLength,
               testRunPhase: 'inTest',
             },
           },
@@ -73,7 +75,7 @@ export const sampleCalls: CallSequence = [
 
             metaInfo: {
               userAgent: 'Firefox 47 / Mac OS X 10.10.1',
-              callsite: testCallsite,
+              callsite: testCallsiteAllLinesTwoDigitNumbers,
               testRunPhase: 'inTest',
             },
           },
@@ -156,7 +158,7 @@ export const sampleCalls: CallSequence = [
 
             metaInfo: {
               userAgent: 'Firefox 47 / Mac OS X 10.10.1',
-              callsite: testCallsite,
+              callsite: testCallsiteAllLinesTwoDigitNumbers,
               testRunPhase: 'inTestBeforeHook',
             },
           },
@@ -209,15 +211,8 @@ export const demoFruitCalls: CallSequence = [
               testRunPhase: 'inTest',
               code: 'E53',
               isTestCafeError: true,
-              callsite: {
-                filename: 'C:\\testcafe-demo\\test\\all.spec.ts',
-                lineNum: 26,
-                callsiteFrameIdx: 6,
-                stackFrames: [],
-                isV8Frames: true,
-              },
             },
-            err: new UncaughtErrorOnPage("AssertionError: expected '41' to deeply equal '7'", 'http://example.org'),
+            err: new ExternalAssertionLibraryError("AssertionError: expected '41' to deeply equal '7'"),
           },
         ]),
         warnings: [],
@@ -280,9 +275,9 @@ export const demoFruitCalls: CallSequence = [
               testRunPhase: 'inTest',
               code: 'E53',
               isTestCafeError: true,
-              callsite: testCallsite,
+              callsite: testCallsiteVariableLineNumberLength,
             },
-            err: new UncaughtErrorOnPage('AssertionError: expected false to be truthy', 'http://example.org'),
+            err: new ExternalAssertionLibraryError('AssertionError: expected false to be truthy'),
           },
         ]),
         warnings: [],
@@ -373,14 +368,8 @@ export const demoFruitCalls: CallSequence = [
               testRunPhase: 'inTest',
               code: 'E53',
               isTestCafeError: true,
-              callsite: {
-                filename: 'C:\\testcafe-demo\\test\\all.spec.ts',
-                lineNum: 39,
-                callsiteFrameIdx: 6,
-                isV8Frames: true,
-              },
             },
-            err: new UncaughtErrorOnPage("AssertionError: expected '41' to deeply equal '5'", 'http://example.org'),
+            err: new ExternalAssertionLibraryError("AssertionError: expected '41' to deeply equal '5'"),
           },
         ]),
         warnings: [],

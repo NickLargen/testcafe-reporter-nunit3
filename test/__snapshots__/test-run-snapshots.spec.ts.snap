@@ -7,21 +7,12 @@ exports[`Regression testing  should match for data copied from a test run with q
         <test-case name="Split" fullname="Banana - Split" result="Failed" duration="17.2">
             <failure>
                 <message>
-                    <![CDATA[AssertionError: expected '41' to deeply equal '7'
-
-Run 1: Failed
+                    <![CDATA[Run 1: Failed
 Run 2: Failed
 Run 3: Failed]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
-   Repeat test actions in the browser and check the console for errors.
-   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
-   If this error does not occur, please write a new issue at:
-   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
-⠀
-   JavaScript error details:
-   AssertionError: expected '41' to deeply equal '7'
+                    <![CDATA[-- AssertionError: expected '41' to deeply equal '7'
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
    Screenshot: C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png]]>
@@ -42,33 +33,26 @@ Run 3: Failed]]>
         <test-case name="Costume" fullname="Banana - Costume" result="Failed" duration="15.978">
             <failure>
                 <message>
-                    <![CDATA[AssertionError: expected false to be truthy
-
-Run 1: Failed
+                    <![CDATA[Run 1: Failed
 Run 2: Failed
 Run 3: Failed]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
-   Repeat test actions in the browser and check the console for errors.
-   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
-   If this error does not occur, please write a new issue at:
-   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
-⠀
-   JavaScript error details:
-   AssertionError: expected false to be truthy
+                    <![CDATA[-- AssertionError: expected false to be truthy
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
 ⠀
-   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
-   ⠀  2 |
-   ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |  throw new Error('Hey ya!');
-   ⠀  5 |}
-   ⠀  6 |
-   ⠀  7 |try {
-   ⠀  8 |  functionThatThrowsUp();
-   ⠀  9 |} catch (err) {
+    ⠀  3 |export let testCallsiteVariableLineNumberLength: any, testCallsiteAllLinesTwoDigitNumbers: any;
+    ⠀  4 |
+    ⠀  5 |// ----- Avoid changing the contents of this file, they constitute mock failure locations ---- \\\\
+    ⠀  6 |
+    ⠀  7 |function functionThatThrowsUp() {
+    >  8 |  throw new Error('Hey ya!');
+    ⠀  9 |}
+   ⠀  10 |
+   ⠀  11 |try {
+   ⠀  12 |  functionThatThrowsUp();
+   ⠀  13 |} catch (err) {
 ⠀
       at functionThatThrowsUp (some-file:1:1)
       at Object.<anonymous> (some-file:1:1)
@@ -101,21 +85,12 @@ Run 3: Failed]]>
         <test-case name="Faster" fullname="Pear - Faster" result="Failed" duration="16.582">
             <failure>
                 <message>
-                    <![CDATA[AssertionError: expected '41' to deeply equal '5'
-
-Run 1: Failed
+                    <![CDATA[Run 1: Failed
 Run 2: Failed
 Run 3: Failed]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
-   Repeat test actions in the browser and check the console for errors.
-   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
-   If this error does not occur, please write a new issue at:
-   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
-⠀
-   JavaScript error details:
-   AssertionError: expected '41' to deeply equal '5'
+                    <![CDATA[-- AssertionError: expected '41' to deeply equal '5'
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
    Screenshot: C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png]]>
@@ -169,15 +144,17 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀
    Browser: Chrome 41.0.2227 / Mac OS X 10.10.1
 ⠀
-   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
-   ⠀  2 |
-   ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |  throw new Error('Hey ya!');
-   ⠀  5 |}
-   ⠀  6 |
-   ⠀  7 |try {
-   ⠀  8 |  functionThatThrowsUp();
-   ⠀  9 |} catch (err) {
+    ⠀  3 |export let testCallsiteVariableLineNumberLength: any, testCallsiteAllLinesTwoDigitNumbers: any;
+    ⠀  4 |
+    ⠀  5 |// ----- Avoid changing the contents of this file, they constitute mock failure locations ---- \\\\
+    ⠀  6 |
+    ⠀  7 |function functionThatThrowsUp() {
+    >  8 |  throw new Error('Hey ya!');
+    ⠀  9 |}
+   ⠀  10 |
+   ⠀  11 |try {
+   ⠀  12 |  functionThatThrowsUp();
+   ⠀  13 |} catch (err) {
 ⠀
       at functionThatThrowsUp (some-file:1:1)
       at Object.<anonymous> (some-file:1:1)
@@ -199,17 +176,19 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀
    Browser: Firefox 47 / Mac OS X 10.10.1
 ⠀
-   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
-   ⠀  2 |
-   ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |  throw new Error('Hey ya!');
-   ⠀  5 |}
-   ⠀  6 |
-   ⠀  7 |try {
-   ⠀  8 |  functionThatThrowsUp();
-   ⠀  9 |} catch (err) {
+   ⠀  13 |} catch (err) {
+   ⠀  14 |  testCallsiteVariableLineNumberLength = createCallsiteRecord({ forError: err });
+   ⠀  15 |}
+   ⠀  16 |
+   ⠀  17 |const functionThatThrowsDown = () => {
+   ⠀> 18 |  throw Error('Wilson!');
+   ⠀  19 |};
+   ⠀  20 |
+   ⠀  21 |try {
+   ⠀  22 |  functionThatThrowsDown();
+   ⠀  23 |} catch (err) {
 ⠀
-      at functionThatThrowsUp (some-file:1:1)
+      at functionThatThrowsDown (some-file:1:1)
       at Object.<anonymous> (some-file:1:1)
       at Runtime._execModule (some-file:1:1)
       at Runtime._loadModule (some-file:1:1)
@@ -250,17 +229,19 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀
    Browser: Firefox 47 / Mac OS X 10.10.1
 ⠀
-   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
-   ⠀  2 |
-   ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |  throw new Error('Hey ya!');
-   ⠀  5 |}
-   ⠀  6 |
-   ⠀  7 |try {
-   ⠀  8 |  functionThatThrowsUp();
-   ⠀  9 |} catch (err) {
+   ⠀  13 |} catch (err) {
+   ⠀  14 |  testCallsiteVariableLineNumberLength = createCallsiteRecord({ forError: err });
+   ⠀  15 |}
+   ⠀  16 |
+   ⠀  17 |const functionThatThrowsDown = () => {
+   ⠀> 18 |  throw Error('Wilson!');
+   ⠀  19 |};
+   ⠀  20 |
+   ⠀  21 |try {
+   ⠀  22 |  functionThatThrowsDown();
+   ⠀  23 |} catch (err) {
 ⠀
-      at functionThatThrowsUp (some-file:1:1)
+      at functionThatThrowsDown (some-file:1:1)
       at Object.<anonymous> (some-file:1:1)
       at Runtime._execModule (some-file:1:1)
       at Runtime._loadModule (some-file:1:1)
