@@ -1,21 +1,21 @@
 {
-    "plugins": [
-        "@semantic-release/commit-analyzer",
-        "@semantic-release/release-notes-generator",
-        "@semantic-release/changelog",
-        [
-            "@semantic-release/npm",
-            {
-                "npmPublish": false
-            }
-        ],
-        "@semantic-release/git",
-        "@semantic-release/github",
-        [
-            "@semantic-release/exec",
-            {
-                "successCmd": "echo \"::set-env name=RELEASE_CREATED::true\""
-            }
-        ]
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/npm",
+      {
+        "npmPublish": false
+      }
+    ],
+    "@semantic-release/git",
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec",
+      {
+        "successCmd": "echo \"::set-env name=RELEASE_CREATED::true\""
+      }
     ]
+  ]
 }

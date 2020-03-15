@@ -50,14 +50,14 @@ Run 3: Failed]]>
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
 ⠀
-   ⠀  1 |import createCallsiteRecord = require("callsite-record");
+   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
    ⠀  2 |
    ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |    throw new Error("Hey ya!");
+   ⠀> 4 |  throw new Error('Hey ya!');
    ⠀  5 |}
    ⠀  6 |
    ⠀  7 |try {
-   ⠀  8 |    functionThatThrowsUp();
+   ⠀  8 |  functionThatThrowsUp();
    ⠀  9 |} catch (err) {
 ⠀
       at functionThatThrowsUp (some-file:1:1)
@@ -149,14 +149,14 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀
    Browser: Chrome 41.0.2227 / Mac OS X 10.10.1
 ⠀
-   ⠀  1 |import createCallsiteRecord = require("callsite-record");
+   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
    ⠀  2 |
    ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |    throw new Error("Hey ya!");
+   ⠀> 4 |  throw new Error('Hey ya!');
    ⠀  5 |}
    ⠀  6 |
    ⠀  7 |try {
-   ⠀  8 |    functionThatThrowsUp();
+   ⠀  8 |  functionThatThrowsUp();
    ⠀  9 |} catch (err) {
 ⠀
       at functionThatThrowsUp (some-file:1:1)
@@ -174,14 +174,14 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀
    Browser: Firefox 47 / Mac OS X 10.10.1
 ⠀
-   ⠀  1 |import createCallsiteRecord = require("callsite-record");
+   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
    ⠀  2 |
    ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |    throw new Error("Hey ya!");
+   ⠀> 4 |  throw new Error('Hey ya!');
    ⠀  5 |}
    ⠀  6 |
    ⠀  7 |try {
-   ⠀  8 |    functionThatThrowsUp();
+   ⠀  8 |  functionThatThrowsUp();
    ⠀  9 |} catch (err) {
 ⠀
       at functionThatThrowsUp (some-file:1:1)
@@ -220,14 +220,14 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀
    Browser: Firefox 47 / Mac OS X 10.10.1
 ⠀
-   ⠀  1 |import createCallsiteRecord = require("callsite-record");
+   ⠀  1 |import * as createCallsiteRecord from 'callsite-record';
    ⠀  2 |
    ⠀  3 |function functionThatThrowsUp() {
-   ⠀> 4 |    throw new Error("Hey ya!");
+   ⠀> 4 |  throw new Error('Hey ya!');
    ⠀  5 |}
    ⠀  6 |
    ⠀  7 |try {
-   ⠀  8 |    functionThatThrowsUp();
+   ⠀  8 |  functionThatThrowsUp();
    ⠀  9 |} catch (err) {
 ⠀
       at functionThatThrowsUp (some-file:1:1)

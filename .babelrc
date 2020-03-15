@@ -1,14 +1,14 @@
 {
-    "presets": [
-        "@babel/preset-typescript",
-        [
-            "@babel/preset-env",
-            {
-                "targets": {
-                    "node": "10.16"
-                }
-            }
-        ]
-    ],
-    "plugins": ["babel-plugin-add-module-exports"]
+  "presets": [
+    "@babel/preset-typescript",
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "10.16"
+        }
+      }
+    ]
+  ],
+  "plugins": ["babel-plugin-add-module-exports"]
 }

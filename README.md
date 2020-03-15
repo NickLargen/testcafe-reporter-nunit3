@@ -8,14 +8,14 @@ Details of the NUnit format can be found at https://github.com/nunit/docs/wiki/T
 
 ### Features:
 
--   Screenshot paths included as test case attachments.
--   Quarantine mode support: passing tests that failed at least once are marked as `Inconclusive` instead of `Passed`. The result of each run is specified as text appended to the error message.
+- Screenshot paths included as test case attachments.
+- Quarantine mode support: passing tests that failed at least once are marked as `Inconclusive` instead of `Passed`. The result of each run is specified as text appended to the error message.
 
 Video paths and error details for every failed quarantine run are not currently supported by the TestCafe Reporter API.
 
 ## Install
 
-```
+```sh
 npm install testcafe-reporter-nunit3
 ```
 
