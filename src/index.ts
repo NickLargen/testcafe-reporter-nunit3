@@ -32,7 +32,9 @@ export = function() {
       // Screenshot paths are included as attachments
       const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n/gm, '');
       // Prevent well meaning trim()s from disturbing the formatting
-      const u2800SpacingHack = withoutScreenshot.replace(/^( *) ([> ] \d+ \|)/gm, '$1⠀$2').replace(/\n\n/g, '\n⠀\n');
+      const u2800SpacingHack = withoutScreenshot
+        .replace(/^[^\S\r\n][^\S\r\n]([\s\d>]+\|)/gm, ($0, $1, $2) => '\u2800' + $1)
+        .replace(/\n\n/g, '\n\u2800\n');
       // @ts-ignore
       this.taskData.handleTestDone(this.escapeHtml(name), testRunInfo, meta, u2800SpacingHack);
     },
@@ -91,7 +93,7 @@ class TestCaseData {
   hasFailureData: boolean;
   constructor(public name: string, public testRunInfo: TestRunInfo, private meta: Metadata, public formattedErrorMessage: string) {
     this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
-    this.errorMessage = testRunInfo.errs.map(err => err.errStack).join('\n');
+    this.errorMessage = this.formattedErrorMessage.replace(/[\s\u2800]*Browser.*?([\n\u2800]*❌|$)/gs, ($0, $1) => $1);
 
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {
       if (this.errorMessage) {
@@ -154,5 +156,4 @@ interface TestCafeError {
   code: string;
   isTestCafeError: boolean;
   callsite: CallsiteRecord;
-  errStack: string;
 }
