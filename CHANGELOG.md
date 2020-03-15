@@ -1,3 +1,10 @@
+# [1.1.0-beta.3](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.1.0-beta.2...v1.1.0-beta.3) (2020-03-15)
+
+
+### Bug Fixes
+
+* ::set-env not found during ci ([7216c83](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/7216c8328a6e9d1e8ca68bf59684d585bacc052b))
+
 # [1.1.0-beta.2](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.1.0-beta.1...v1.1.0-beta.2) (2020-03-15)
 
 
