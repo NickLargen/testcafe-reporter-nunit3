@@ -14,8 +14,13 @@ Run 2: Failed
 Run 3: Failed]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- Error on page "http://example.org":
+                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
+   Repeat test actions in the browser and check the console for errors.
+   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
+   If this error does not occur, please write a new issue at:
+   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
 ⠀
+   JavaScript error details:
    AssertionError: expected '41' to deeply equal '7'
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
@@ -44,8 +49,13 @@ Run 2: Failed
 Run 3: Failed]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- Error on page "http://example.org":
+                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
+   Repeat test actions in the browser and check the console for errors.
+   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
+   If this error does not occur, please write a new issue at:
+   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
 ⠀
+   JavaScript error details:
    AssertionError: expected false to be truthy
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
@@ -98,8 +108,13 @@ Run 2: Failed
 Run 3: Failed]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- Error on page "http://example.org":
+                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
+   Repeat test actions in the browser and check the console for errors.
+   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
+   If this error does not occur, please write a new issue at:
+   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
 ⠀
+   JavaScript error details:
    AssertionError: expected '41' to deeply equal '5'
 ⠀
    Browser: Chrome 80.0.3987.132 / Windows 10
@@ -143,8 +158,13 @@ exports[`Regression testing  should match for the example data used by the offic
 ]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- Error on page "http://example.org":
+                    <![CDATA[-- A JavaScript error occurred on "http://example.org".
+   Repeat test actions in the browser and check the console for errors.
+   If you see this error, it means that the tested website caused it. You can fix it or disable tracking JavaScript errors in TestCafe. To do the latter, enable the "--skip-js-errors" option.
+   If this error does not occur, please write a new issue at:
+   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
 ⠀
+   JavaScript error details:
    Some error
 ⠀
    Browser: Chrome 41.0.2227 / Mac OS X 10.10.1
@@ -171,6 +191,11 @@ exports[`Regression testing  should match for the example data used by the offic
       at Runtime.requireModule (some-file:1:1)
 ⠀
 -- The specified selector does not match any element in the DOM tree.
+⠀
+      | Lorem ipsum dolor sit amet, consectetur adipiscing...)
+    > |   one
+      |   two
+      |   three
 ⠀
    Browser: Firefox 47 / Mac OS X 10.10.1
 ⠀
@@ -215,8 +240,13 @@ exports[`Regression testing  should match for the example data used by the offic
                     <![CDATA[]]>
                 </message>
                 <stack-trace>
-                    <![CDATA[-- - Error in beforeEach hook -
+                    <![CDATA[-- - Error in test.before hook -
    The specified selector does not match any element in the DOM tree.
+⠀
+      | Lorem ipsum dolor sit amet, consectetur adipiscing...)
+    > |   one
+      |   two
+      |   three
 ⠀
    Browser: Firefox 47 / Mac OS X 10.10.1
 ⠀

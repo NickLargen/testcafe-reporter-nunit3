@@ -9,6 +9,8 @@ function makeErrors(errDescrs: Array<ErrorDescription>) {
   });
 }
 
+const longSelector = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua';
+
 export type CallSequence = Array<{ method: string; args: Array<any> }>;
 export type ErrorDescription = { err: any; metaInfo: { [key: string]: any } };
 
@@ -60,19 +62,19 @@ export const sampleCalls: CallSequence = [
               userAgent: 'Chrome 41.0.2227 / Mac OS X 10.10.1',
               screenshotPath: '/screenshots/1445437598847/errors',
               callsite: testCallsite,
-              testRunState: 'inTest',
+              testRunPhase: 'inTest',
             },
           },
           {
             err: new ActionElementNotFoundError({
-              apiFnChain: ['one', 'two', 'three'],
+              apiFnChain: [longSelector, 'one', 'two', 'three'],
               apiFnIndex: 1,
             }),
 
             metaInfo: {
               userAgent: 'Firefox 47 / Mac OS X 10.10.1',
               callsite: testCallsite,
-              testRunState: 'inTest',
+              testRunPhase: 'inTest',
             },
           },
         ]),
@@ -148,14 +150,14 @@ export const sampleCalls: CallSequence = [
         errs: makeErrors([
           {
             err: new ActionElementNotFoundError({
-              apiFnChain: ['one', 'two', 'three'],
+              apiFnChain: [longSelector, 'one', 'two', 'three'],
               apiFnIndex: 1,
             }),
 
             metaInfo: {
               userAgent: 'Firefox 47 / Mac OS X 10.10.1',
               callsite: testCallsite,
-              testRunState: 'inBeforeEach',
+              testRunPhase: 'inTestBeforeHook',
             },
           },
         ]),

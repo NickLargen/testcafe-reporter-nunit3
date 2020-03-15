@@ -91,7 +91,7 @@ class TestCaseData {
   hasFailureData: boolean;
   constructor(public name: string, public testRunInfo: TestRunInfo, private meta: Metadata, public formattedErrorMessage: string) {
     this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
-    this.errorMessage = testRunInfo.errs.map(err => err.errMsg).join('\n');
+    this.errorMessage = testRunInfo.errs.map(err => err.errStack).join('\n');
 
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {
       if (this.errorMessage) {
@@ -154,5 +154,5 @@ interface TestCafeError {
   code: string;
   isTestCafeError: boolean;
   callsite: CallsiteRecord;
-  errMsg: string;
+  errStack: string;
 }
