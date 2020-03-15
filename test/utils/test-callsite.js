@@ -1,11 +1,17 @@
-var createCallsiteRecord = require('callsite-record');
+import createCallsiteRecord = require("callsite-record");
 
-function someFunc() {
-    throw new Error('Hey ya!');
+function functionThatThrowsUp() {
+    throw new Error("Hey ya!");
 }
 
 try {
-    someFunc();
+    functionThatThrowsUp();
 } catch (err) {
-    module.exports = createCallsiteRecord(err);
+    module.exports = createCallsiteRecord({
+        forError: err,
+        processFrameFn: frame => {
+            frame.fileName = frame.fileName.replace(process.cwd(), ".");
+            return frame;
+        }
+    });
 }
