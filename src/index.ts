@@ -1,10 +1,10 @@
 import { CallsiteRecord } from 'callsite-record';
 import { readFileSync } from 'fs';
-import { join as pathJoin, relative as pathRelative } from 'path';
-import convertBackslashToForward = require('slash');
 import * as Handlebars from 'handlebars';
+import * as path from 'path';
+import convertBackslashToForward = require('slash');
 
-const template = Handlebars.compile(readFileSync(convertBackslashToForward(pathJoin(__dirname, 'template.handlebars')), 'UTF-8'));
+const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'UTF-8'));
 
 type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
 
@@ -66,7 +66,7 @@ export = function() {
         .replace(/\n\n/g, '\n\u2800\n');
       const withRelativeFilePaths = u2800SpacingHack.replace(
         /\((.+?)(:\d+:\d+)\)/g,
-        ($0, $1, $2) => `(${convertBackslashToForward(pathRelative(process.cwd(), $1))}${$2})`
+        ($0, $1, $2) => `(${getOsIndependentRelativeFilePath($1)}${$2})`
       );
 
       this.taskData.handleTestDone((this as any).escapeHtml(name), testRunInfo, meta, withRelativeFilePaths);
@@ -80,6 +80,11 @@ export = function() {
     },
   };
 };
+
+function getOsIndependentRelativeFilePath(filePath: string): string {
+  const relativePath = path.isAbsolute(filePath) ? path.relative(process.cwd(), filePath) : filePath;
+  return convertBackslashToForward(relativePath);
+}
 
 class TaskData {
   fixtures: FixtureData[];
@@ -129,8 +134,7 @@ class TestCaseData {
     this.errorMessage = this.formattedErrorMessage.replace(/[\s\u2800]*Browser.*?([\n\u2800]*❌|$)/gs, ($0, $1) => $1);
 
     testRunInfo.screenshots = testRunInfo.screenshots?.map(
-      screenshot =>
-        (screenshot = { ...screenshot, screenshotPath: convertBackslashToForward(pathRelative(process.cwd(), screenshot.screenshotPath)) })
+      screenshot => (screenshot = { ...screenshot, screenshotPath: getOsIndependentRelativeFilePath(screenshot.screenshotPath) })
     );
 
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {

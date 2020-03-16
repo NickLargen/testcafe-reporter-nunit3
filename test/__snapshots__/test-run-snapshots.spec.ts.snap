@@ -22,13 +22,13 @@ Run 3: Failed]]>
             </failure>
             <attachments>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-1/errors/1_run-1_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-1/errors/1_run-1_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-1/errors/1_run-2_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-1/errors/1_run-2_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-1/errors/1_run-3_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-1/errors/1_run-3_Chrome.png</filePath>
                 </attachment>
             </attachments>
         </test-case>
@@ -72,10 +72,10 @@ Run 3: Failed]]>
             </failure>
             <attachments>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-2/errors/1_run-1_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-2/errors/1_run-1_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-2/errors/1_run-2_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-2/errors/1_run-2_Chrome.png</filePath>
                 </attachment>
                 <attachment>
                     <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-2/errors/1_run-3_Chrome.png</filePath>
@@ -104,13 +104,13 @@ Run 3: Failed]]>
             </failure>
             <attachments>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-4/errors/1_run-1_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-4/errors/1_run-1_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-4/errors/1_run-2_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-4/errors/1_run-2_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>testcafe-demo/screenshots/1970-03-14_11-27-11/test-4/errors/1_run-3_Chrome.png</filePath>
+                    <filePath>./testcafe-demo/screenshots/1970-03-14_11-27-11/test-4/errors/1_run-3_Chrome.png</filePath>
                 </attachment>
             </attachments>
         </test-case>
@@ -125,10 +125,10 @@ exports[`Regression testing  should match for the example data used by the offic
         <test-case name="First test in first fixture" fullname="First fixture - First test in first fixture" result="Inconclusive" duration="74">
             <attachments>
                 <attachment>
-                    <filePath>screenshots/1445437598847/1.png</filePath>
+                    <filePath>./screenshots/1445437598847/1.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>screenshots/1445437598847/2.png</filePath>
+                    <filePath>./screenshots/1445437598847/2.png</filePath>
                 </attachment>
             </attachments>
         </test-case>

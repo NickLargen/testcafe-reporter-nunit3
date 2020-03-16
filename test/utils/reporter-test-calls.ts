@@ -300,8 +300,8 @@ export const demoFruitCalls: CallSequence = [
             takenOnFail: true,
           },
           {
-            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png',
-            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-3_Chrome.png',
+            screenshotPath: 'testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png',
+            thumbnailPath: 'testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-3_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 3,
             takenOnFail: true,
