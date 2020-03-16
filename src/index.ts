@@ -1,9 +1,10 @@
 import { CallsiteRecord } from 'callsite-record';
 import { readFileSync } from 'fs';
-import * as path from 'path';
+import { join as pathJoin, relative as pathRelative } from 'path';
+import convertBackslashToForward = require('slash');
 import * as Handlebars from 'handlebars';
 
-const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'UTF-8'));
+const template = Handlebars.compile(readFileSync(convertBackslashToForward(pathJoin(__dirname, 'template.handlebars')), 'UTF-8'));
 
 type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
 
@@ -63,7 +64,10 @@ export = function() {
       const u2800SpacingHack = withoutScreenshot
         .replace(/^[^\S\r\n][^\S\r\n]([\s\d>]+\|)/gm, ($0, $1, $2) => '\u2800' + $1)
         .replace(/\n\n/g, '\n\u2800\n');
-      const withRelativeFilePaths = u2800SpacingHack.replace(/\((.+?)(:\d+:\d+)\)/g, ($0, $1, $2) => `(${path.relative(process.cwd(), $1)}${$2})`);
+      const withRelativeFilePaths = u2800SpacingHack.replace(
+        /\((.+?)(:\d+:\d+)\)/g,
+        ($0, $1, $2) => `(${convertBackslashToForward(pathRelative(process.cwd(), $1))}${$2})`
+      );
 
       this.taskData.handleTestDone((this as any).escapeHtml(name), testRunInfo, meta, withRelativeFilePaths);
     },
@@ -125,7 +129,8 @@ class TestCaseData {
     this.errorMessage = this.formattedErrorMessage.replace(/[\s\u2800]*Browser.*?([\n\u2800]*❌|$)/gs, ($0, $1) => $1);
 
     testRunInfo.screenshots = testRunInfo.screenshots?.map(
-      screenshot => (screenshot = { ...screenshot, screenshotPath: path.relative(process.cwd(), screenshot.screenshotPath) })
+      screenshot =>
+        (screenshot = { ...screenshot, screenshotPath: convertBackslashToForward(pathRelative(process.cwd(), screenshot.screenshotPath)) })
     );
 
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {
