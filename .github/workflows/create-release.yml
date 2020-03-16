@@ -1,44 +1,44 @@
 name: Release
 
 on:
-    push:
-        branches:
-            - master
-            - beta
+  push:
+    branches:
+      - master
+      - beta
 
 jobs:
-    release:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 12
-                  registry-url: "https://registry.npmjs.org"
-            - run: npm ci
-            - run: npm test
-            - run: npx semantic-release
-              name: Create Release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm ci
+      - run: npm test
+      - run: npx semantic-release
+        name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - run: npm publish
-              name: Publish to NPM
-              if: env.RELEASE_CREATED
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - run: npm publish
+        name: Publish to NPM
+        if: env.RELEASE_CREATED
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
-            - uses: actions/setup-node@v1
-              if: env.RELEASE_CREATED
-              with:
-                  node-version: 12
-                  registry-url: "https://npm.pkg.github.com"
-                  scope: "@nicklargen"
-            - run: 'echo $(node -p "const current = require(''./package.json''); JSON.stringify({...current, name: ''@nicklargen/'' + current.name})") > package.json'
-              name: Scope package name
-              if: env.RELEASE_CREATED
-            - run: npm publish
-              name: Publish to GitHub Packages
-              if: env.RELEASE_CREATED
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/setup-node@v1
+        if: env.RELEASE_CREATED
+        with:
+          node-version: 12
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@nicklargen'
+      - run: 'echo $(node -p "const current = require(''./package.json''); JSON.stringify({...current, name: ''@nicklargen/'' + current.name})") > package.json'
+        name: Scope package name
+        if: env.RELEASE_CREATED
+      - run: npm publish
+        name: Publish to GitHub Packages
+        if: env.RELEASE_CREATED
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
