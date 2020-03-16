@@ -36,13 +36,13 @@ export const sampleCalls: CallSequence = [
         screenshotPath: '/screenshots/1445437598847',
         screenshots: [
           {
-            screenshotPath: 'C:/screenshots/1445437598847/1.png',
+            screenshotPath: './screenshots/1445437598847/1.png',
             userAgent: 'Chrome',
             quarantineAttempt: 1,
             takenOnFail: false,
           },
           {
-            screenshotPath: 'C:/screenshots/1445437598847/2.png',
+            screenshotPath: './screenshots/1445437598847/2.png',
             userAgent: 'Firefox',
             quarantineAttempt: 1,
             takenOnFail: false,
@@ -192,7 +192,7 @@ export const demoFruitCalls: CallSequence = [
   },
   {
     method: 'reportFixtureStart',
-    args: ['Banana', 'C:\\testcafe-demo\\test\\all.spec.ts', {}],
+    args: ['Banana', '.\\testcafe-demo\\test\\all.spec.ts', {}],
   },
   {
     method: 'reportTestStart',
@@ -207,7 +207,7 @@ export const demoFruitCalls: CallSequence = [
           {
             metaInfo: {
               userAgent: 'Chrome 80.0.3987.132 / Windows 10',
-              screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png',
+              screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png',
               testRunPhase: 'inTest',
               code: 'E53',
               isTestCafeError: true,
@@ -218,25 +218,25 @@ export const demoFruitCalls: CallSequence = [
         warnings: [],
         durationMs: 17200,
         unstable: false,
-        screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors',
+        screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors',
         screenshots: [
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-1_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\thumbnails\\1_run-1_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-1_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\thumbnails\\1_run-1_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 1,
             takenOnFail: true,
           },
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-2_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\thumbnails\\1_run-2_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-2_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\thumbnails\\1_run-2_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 2,
             takenOnFail: true,
           },
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\thumbnails\\1_run-3_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\thumbnails\\1_run-3_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 3,
             takenOnFail: true,
@@ -271,7 +271,7 @@ export const demoFruitCalls: CallSequence = [
           {
             metaInfo: {
               userAgent: 'Chrome 80.0.3987.132 / Windows 10',
-              screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png',
+              screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png',
               testRunPhase: 'inTest',
               code: 'E53',
               isTestCafeError: true,
@@ -283,25 +283,25 @@ export const demoFruitCalls: CallSequence = [
         warnings: [],
         durationMs: 15978,
         unstable: false,
-        screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors',
+        screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors',
         screenshots: [
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-1_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-1_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-1_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-1_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 1,
             takenOnFail: true,
           },
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-2_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-2_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-2_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-2_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 2,
             takenOnFail: true,
           },
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-3_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\thumbnails\\1_run-3_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 3,
             takenOnFail: true,
@@ -325,7 +325,7 @@ export const demoFruitCalls: CallSequence = [
   },
   {
     method: 'reportFixtureStart',
-    args: ['Pear', 'C:\\testcafe-demo\\test\\all.spec.ts', {}],
+    args: ['Pear', '.\\testcafe-demo\\test\\all.spec.ts', {}],
   },
   {
     method: 'reportTestStart',
@@ -364,7 +364,7 @@ export const demoFruitCalls: CallSequence = [
           {
             metaInfo: {
               userAgent: 'Chrome 80.0.3987.132 / Windows 10',
-              screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png',
+              screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png',
               testRunPhase: 'inTest',
               code: 'E53',
               isTestCafeError: true,
@@ -375,25 +375,25 @@ export const demoFruitCalls: CallSequence = [
         warnings: [],
         durationMs: 16582,
         unstable: false,
-        screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors',
+        screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors',
         screenshots: [
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-1_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\thumbnails\\1_run-1_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-1_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\thumbnails\\1_run-1_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 1,
             takenOnFail: true,
           },
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-2_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\thumbnails\\1_run-2_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-2_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\thumbnails\\1_run-2_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 2,
             takenOnFail: true,
           },
           {
-            screenshotPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png',
-            thumbnailPath: 'C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\thumbnails\\1_run-3_Chrome.png',
+            screenshotPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png',
+            thumbnailPath: '.\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\thumbnails\\1_run-3_Chrome.png',
             userAgent: 'Chrome_80.0.3987.132_Windows_10',
             quarantineAttempt: 3,
             takenOnFail: true,

@@ -30,13 +30,15 @@ export = function() {
       // @ts-ignore
       const errorDetails = testRunInfo.errs.map(err => this.formatError(err, '❌ ')).join('\n\n') || '';
       // Screenshot paths are included as attachments
-      const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n/gm, '');
+      const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n?$/gm, '');
       // Prevent well meaning trim()s from disturbing the formatting
       const u2800SpacingHack = withoutScreenshot
         .replace(/^[^\S\r\n][^\S\r\n]([\s\d>]+\|)/gm, ($0, $1, $2) => '\u2800' + $1)
         .replace(/\n\n/g, '\n\u2800\n');
+      const withRelativeFilePaths = u2800SpacingHack.replace(/\((.+?)(:\d+:\d+)\)/g, ($0, $1, $2) => `(${path.relative(process.cwd(), $1)}${$2})`);
+
       // @ts-ignore
-      this.taskData.handleTestDone(this.escapeHtml(name), testRunInfo, meta, u2800SpacingHack);
+      this.taskData.handleTestDone(this.escapeHtml(name), testRunInfo, meta, withRelativeFilePaths);
     },
 
     reportTaskDone(endTime: Date, passed: number, warnings: string[], result: TaskResult) {
@@ -95,6 +97,10 @@ class TestCaseData {
     this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
     this.errorMessage = this.formattedErrorMessage.replace(/[\s\u2800]*Browser.*?([\n\u2800]*❌|$)/gs, ($0, $1) => $1);
 
+    testRunInfo.screenshots = testRunInfo.screenshots?.map(
+      screenshot => (screenshot = { ...screenshot, screenshotPath: path.relative(process.cwd(), screenshot.screenshotPath) })
+    );
+
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {
       if (this.errorMessage) {
         this.errorMessage += '\n\n';
@@ -119,7 +125,7 @@ interface TestRunInfo {
   durationMs: number;
   unstable: boolean;
   screenshotPath: string;
-  screenshots: Screenshot[];
+  screenshots?: Screenshot[];
   quarantine: Quarantine;
   skipped: boolean;
 }

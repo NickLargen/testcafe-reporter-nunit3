@@ -17,18 +17,18 @@ Run 3: Failed]]>
                     <![CDATA[❌ AssertionError: expected '41' to deeply equal '7'
 ⠀
   Browser: Chrome 80.0.3987.132 / Windows 10
-  Screenshot: C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png]]>
+]]>
                 </stack-trace>
             </failure>
             <attachments>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-1_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-1_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-2_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-2_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-1\\errors\\1_run-3_Chrome.png</filePath>
                 </attachment>
             </attachments>
         </test-case>
@@ -58,27 +58,27 @@ Run 3: Failed]]>
 ⠀   12 |  functionThatThrowsUp();
 ⠀   13 |} catch (err) {
 ⠀
-     at functionThatThrowsUp (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)
-     at Runtime.requireModuleOrMock (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)]]>
+     at functionThatThrowsUp  (test\\utils\\test-callsite.ts:1:1)
+     at Object.<anonymous>  (test\\utils\\test-callsite.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModuleOrMock  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Object.<anonymous>  (test\\utils\\reporter-test-calls.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)]]>
                 </stack-trace>
             </failure>
             <attachments>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-1_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-1_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-2_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-2_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-2\\errors\\1_run-3_Chrome.png</filePath>
                 </attachment>
             </attachments>
         </test-case>
@@ -99,18 +99,18 @@ Run 3: Failed]]>
                     <![CDATA[❌ AssertionError: expected '41' to deeply equal '5'
 ⠀
   Browser: Chrome 80.0.3987.132 / Windows 10
-  Screenshot: C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png]]>
+]]>
                 </stack-trace>
             </failure>
             <attachments>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-1_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-1_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-2_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-2_Chrome.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:\\testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png</filePath>
+                    <filePath>testcafe-demo\\screenshots\\1970-03-14_11-27-11\\test-4\\errors\\1_run-3_Chrome.png</filePath>
                 </attachment>
             </attachments>
         </test-case>
@@ -125,10 +125,10 @@ exports[`Regression testing  should match for the example data used by the offic
         <test-case name="First test in first fixture" fullname="First fixture - First test in first fixture" result="Inconclusive" duration="74">
             <attachments>
                 <attachment>
-                    <filePath>C:/screenshots/1445437598847/1.png</filePath>
+                    <filePath>screenshots\\1445437598847\\1.png</filePath>
                 </attachment>
                 <attachment>
-                    <filePath>C:/screenshots/1445437598847/2.png</filePath>
+                    <filePath>screenshots\\1445437598847\\2.png</filePath>
                 </attachment>
             </attachments>
         </test-case>
@@ -175,16 +175,16 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀   12 |  functionThatThrowsUp();
 ⠀   13 |} catch (err) {
 ⠀
-     at functionThatThrowsUp (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)
-     at Runtime.requireModuleOrMock (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)
+     at functionThatThrowsUp  (test\\utils\\test-callsite.ts:1:1)
+     at Object.<anonymous>  (test\\utils\\test-callsite.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModuleOrMock  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Object.<anonymous>  (test\\utils\\reporter-test-calls.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
 ⠀
 ❌ The specified selector does not match any element in the DOM tree.
 ⠀
@@ -207,16 +207,16 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀   22 |  functionThatThrowsDown();
 ⠀   23 |} catch (err) {
 ⠀
-     at functionThatThrowsDown (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)
-     at Runtime.requireModuleOrMock (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)]]>
+     at functionThatThrowsDown  (test\\utils\\test-callsite.ts:1:1)
+     at Object.<anonymous>  (test\\utils\\test-callsite.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModuleOrMock  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Object.<anonymous>  (test\\utils\\reporter-test-calls.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)]]>
                 </stack-trace>
             </failure>
         </test-case>
@@ -266,16 +266,16 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀   22 |  functionThatThrowsDown();
 ⠀   23 |} catch (err) {
 ⠀
-     at functionThatThrowsDown (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)
-     at Runtime.requireModuleOrMock (some-file:1:1)
-     at Object.<anonymous> (some-file:1:1)
-     at Runtime._execModule (some-file:1:1)
-     at Runtime._loadModule (some-file:1:1)
-     at Runtime.requireModule (some-file:1:1)]]>
+     at functionThatThrowsDown  (test\\utils\\test-callsite.ts:1:1)
+     at Object.<anonymous>  (test\\utils\\test-callsite.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModuleOrMock  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Object.<anonymous>  (test\\utils\\reporter-test-calls.ts:1:1)
+     at Runtime._execModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime._loadModule  (node_modules\\jest-runtime\\build\\index.js:1:1)
+     at Runtime.requireModule  (node_modules\\jest-runtime\\build\\index.js:1:1)]]>
                 </stack-trace>
             </failure>
         </test-case>

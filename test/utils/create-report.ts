@@ -19,5 +19,5 @@ export function createReport(reporterTestCalls: CallSequence) {
   });
 
   // Mock stack entries for test run consistency
-  return outStream.data.replace(/\s*?\(.+?:\d+:\d+\)/g, ' (some-file:1:1)');
+  return outStream.data.replace(/\((.+?):\d+:\d+\)/g, ' ($1:1:1)');
 }
