@@ -11,14 +11,43 @@ export = function() {
   return {
     noColors: true,
     taskData: (null as unknown) as TaskData,
+    cleanupPrematureExit: (null as unknown) as () => void | null,
+
+    addFailedCompletionCheck() {
+      const completionCheckName = 'TEST RAN TO COMPLETION CHECK';
+      this.taskData.handleTestStart(completionCheckName, {});
+      this.taskData.handleTestDone(
+        completionCheckName,
+        {
+          durationMs: 0,
+          errs: [{} as any],
+          quarantine: [],
+          screenshotPath: '',
+          skipped: false,
+          unstable: false,
+          warnings: [],
+        },
+        {},
+        'Process exited prior to all tests finishing.'
+      );
+    },
+
+    writeAllData() {
+      (this as any).write(template(this.taskData));
+    },
 
     reportTaskStart(startTime: Date, userAgents: string[], testCount: number) {
       this.taskData = new TaskData(startTime.toISOString());
+
+      this.cleanupPrematureExit = () => {
+        this.addFailedCompletionCheck();
+        this.writeAllData();
+      };
+      process.on('exit', this.cleanupPrematureExit);
     },
 
     reportFixtureStart(name: string, path: string, meta: Metadata) {
-      // @ts-ignore
-      this.taskData.handleFixtureStart(this.escapeHtml(name), path, meta);
+      this.taskData.handleFixtureStart((this as any).escapeHtml(name), path, meta);
     },
 
     // Optional
@@ -27,8 +56,7 @@ export = function() {
     },
 
     reportTestDone(name: string, testRunInfo: TestRunInfo, meta: Metadata) {
-      // @ts-ignore
-      const errorDetails = testRunInfo.errs.map(err => this.formatError(err, '❌ ')).join('\n\n') || '';
+      const errorDetails = testRunInfo.errs.map(err => (this as any).formatError(err, '❌ ')).join('\n\n') || '';
       // Screenshot paths are included as attachments
       const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n?$/gm, '');
       // Prevent well meaning trim()s from disturbing the formatting
@@ -37,15 +65,14 @@ export = function() {
         .replace(/\n\n/g, '\n\u2800\n');
       const withRelativeFilePaths = u2800SpacingHack.replace(/\((.+?)(:\d+:\d+)\)/g, ($0, $1, $2) => `(${path.relative(process.cwd(), $1)}${$2})`);
 
-      // @ts-ignore
-      this.taskData.handleTestDone(this.escapeHtml(name), testRunInfo, meta, withRelativeFilePaths);
+      this.taskData.handleTestDone((this as any).escapeHtml(name), testRunInfo, meta, withRelativeFilePaths);
     },
 
     reportTaskDone(endTime: Date, passed: number, warnings: string[], result: TaskResult) {
       this.taskData.handleTaskDone(endTime.toISOString(), passed, warnings, result);
 
-      // @ts-ignore
-      this.write(template(this.taskData));
+      process.off('exit', this.cleanupPrematureExit);
+      this.writeAllData();
     },
   };
 };
