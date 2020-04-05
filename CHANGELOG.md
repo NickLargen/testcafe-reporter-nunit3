@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v2.0.0...v2.0.1) (2020-04-05)
+
+
+### Bug Fixes
+
+* remove implicit dependency on slash module, it is not part of node's standard library ([de21462](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/de214625b8141bf65f6b9ac94f3cf0f89cb2c522))
+* update dependencies for minor security vulnerability fixes ([decb430](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/decb430d9e0102b309c66adcb3cc503557e39d43))
+
 # [2.0.0](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v1.0.12...v2.0.0) (2020-03-16)
 
 

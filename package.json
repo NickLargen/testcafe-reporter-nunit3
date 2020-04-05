@@ -1,6 +1,6 @@
 {
   "name": "testcafe-reporter-nunit3",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "NUnit 3 TestCafe reporter plugin that supports screenshot attachments.",
   "repository": "https://github.com/NickLargen/testcafe-reporter-nunit3",
   "author": {
