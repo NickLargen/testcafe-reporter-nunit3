@@ -2,7 +2,8 @@ import { CallsiteRecord } from 'callsite-record';
 import { readFileSync } from 'fs';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
-import convertBackslashToForward = require('slash');
+
+const convertBackslashToForward = (str: string) => str.replace(/\\/g, '/');
 
 const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'UTF-8'));
 
