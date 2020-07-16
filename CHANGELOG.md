@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v2.0.1...v2.0.2) (2020-07-16)
+
+
+### Bug Fixes
+
+* remove runtime dependency of tslib ([3bcc104](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/3bcc104467c74d90d562f53c31b445458def4db5))
+
 ## [2.0.1](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v2.0.0...v2.0.1) (2020-04-05)
 
 
