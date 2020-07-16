@@ -3,8 +3,6 @@ import { readFileSync } from 'fs';
 import * as Handlebars from 'handlebars';
 import * as path from 'path';
 
-const convertBackslashToForward = (str: string) => str.replace(/\\/g, '/');
-
 const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'utf-8'));
 
 type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
@@ -65,12 +63,8 @@ export = function () {
       const u2800SpacingHack = withoutScreenshot
         .replace(/^[^\S\r\n][^\S\r\n]([\s\d>]+\|)/gm, ($0, $1, $2) => '\u2800' + $1)
         .replace(/\n\n/g, '\n\u2800\n');
-      const withRelativeFilePaths = u2800SpacingHack.replace(
-        /\((.+?)(:\d+:\d+)\)/g,
-        ($0, $1, $2) => `(${getOsIndependentRelativeFilePath($1)}${$2})`
-      );
 
-      this.taskData.handleTestDone((this as any).escapeHtml(name), testRunInfo, meta, withRelativeFilePaths);
+      this.taskData.handleTestDone((this as any).escapeHtml(name), testRunInfo, meta, u2800SpacingHack);
     },
 
     reportTaskDone(endTime: Date, passed: number, warnings: string[], result: TaskResult) {
@@ -81,11 +75,6 @@ export = function () {
     },
   };
 };
-
-function getOsIndependentRelativeFilePath(filePath: string): string {
-  const relativePath = path.isAbsolute(filePath) ? path.relative(process.cwd(), filePath) : filePath;
-  return convertBackslashToForward(relativePath);
-}
 
 class TaskData {
   fixtures: FixtureData[];
@@ -130,13 +119,17 @@ class TestCaseData {
   errorMessage: string;
   duration: number;
   hasFailureData: boolean;
+  attachmentPaths?: string[];
   constructor(public name: string, public testRunInfo: TestRunInfo, private meta: Metadata, public formattedErrorMessage: string) {
     this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
     this.errorMessage = this.formattedErrorMessage.replace(/[\s\u2800]*Browser.*?([\n\u2800]*❌|$)/gs, ($0, $1) => $1);
 
-    testRunInfo.screenshots = testRunInfo.screenshots?.map(
-      (screenshot) => (screenshot = { ...screenshot, screenshotPath: getOsIndependentRelativeFilePath(screenshot.screenshotPath) })
-    );
+    if (testRunInfo.screenshots) {
+      this.attachmentPaths = testRunInfo.screenshots.map((screenshot) => screenshot.screenshotPath);
+    }
+    if (testRunInfo.videos) {
+      this.attachmentPaths = (this.attachmentPaths ?? []).concat(testRunInfo.videos.map((video) => video.videoPath));
+    }
 
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {
       if (this.errorMessage) {
@@ -163,6 +156,7 @@ interface TestRunInfo {
   unstable: boolean;
   screenshotPath: string;
   screenshots?: Screenshot[];
+  videos?: Video[];
   quarantine: Quarantine;
   skipped: boolean;
 }
@@ -173,6 +167,11 @@ interface Screenshot {
   userAgent: string;
   quarantineAttempt: number;
   takenOnFail: boolean;
+}
+
+interface Video {
+  videoPath: string;
+  singleFile: boolean;
 }
 
 interface Quarantine {

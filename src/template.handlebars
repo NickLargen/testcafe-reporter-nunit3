@@ -14,13 +14,13 @@
                 </stack-trace>
             </failure>
             {{/if}}
-            {{#if testRunInfo.screenshots}}
+            {{#if attachmentPaths}}
             <attachments>
-                {{#testRunInfo.screenshots}}
+                {{#attachmentPaths}}
                 <attachment>
-                    <filePath>{{{screenshotPath}}}</filePath>
+                    <filePath>{{{.}}}</filePath>
                 </attachment>
-                {{/testRunInfo.screenshots}}
+                {{/attachmentPaths}}
             </attachments>
             {{/if}}
         </test-case>

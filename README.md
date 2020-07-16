@@ -8,11 +8,11 @@ Details of the NUnit format can be found at https://github.com/nunit/docs/wiki/T
 
 ### Features:
 
-- Relative screenshot paths included as test case attachments.
+- Video and screenshot paths included as test case attachments.
 - Quarantine mode support: passing tests that failed at least once are marked as `Inconclusive` instead of `Passed`. The result of each run is specified as text appended to the error message.
 - Fails the test run (via a new failed test case) if the TestCafe process exits without all tests finishing. The provided xunit reporter emits a blank file in these scenarios.
 
-Video paths and error details for every failed quarantine run are not currently supported by the TestCafe Reporter API.
+Error details for every failed quarantine run are not currently supported by the TestCafe Reporter API.
 
 ## Install
 
