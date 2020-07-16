@@ -1,3 +1,18 @@
+# [3.0.0](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v2.0.2...v3.0.0) (2020-07-16)
+
+
+### Features
+
+* include video paths as attachments ([8748e1c](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/8748e1c5d203213653673fd1a5ba847ff3213e95)), closes [#5](https://github.com/NickLargen/testcafe-reporter-nunit3/issues/5)
+
+
+### BREAKING CHANGES
+
+* File paths are absolute so that they work seamlessly in the simple case of running
+tests from a different directory than the Build.SourcesDirectory where test results are uploaded
+from. This may impact usage if you are moving test result files around after they are generated,
+such as running tests in Docker.
+
 ## [2.0.2](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v2.0.1...v2.0.2) (2020-07-16)
 
 
