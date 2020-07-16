@@ -5,7 +5,7 @@ import * as path from 'path';
 
 const convertBackslashToForward = (str: string) => str.replace(/\\/g, '/');
 
-const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'UTF-8'));
+const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.handlebars'), 'utf-8'));
 
 type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
 
