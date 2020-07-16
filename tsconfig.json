@@ -9,7 +9,7 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "removeComments": true,
-    "importHelpers": true,
+    "importHelpers": false,
     "target": "ES5"
   },
   "include": ["src"]
