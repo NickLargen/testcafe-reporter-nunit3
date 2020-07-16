@@ -7,14 +7,14 @@ export function createReport(reporterTestCalls: CallSequence) {
   const outStream = {
     data: '',
 
-    write: function(text: string) {
+    write: function (text: string) {
       this.data += text;
     },
   };
 
   const plugin = buildReporterPlugin(pluginFactory, outStream);
 
-  reporterTestCalls.forEach(function(call) {
+  reporterTestCalls.forEach(function (call) {
     plugin[call.method].apply(plugin, call.args);
   });
 

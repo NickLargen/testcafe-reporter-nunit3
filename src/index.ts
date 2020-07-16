@@ -9,7 +9,7 @@ const template = Handlebars.compile(readFileSync(path.join(__dirname, 'template.
 
 type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
 
-export = function() {
+export = function () {
   return {
     noColors: true,
     taskData: (null as unknown) as TaskData,
@@ -58,7 +58,7 @@ export = function() {
     },
 
     reportTestDone(name: string, testRunInfo: TestRunInfo, meta: Metadata) {
-      const errorDetails = testRunInfo.errs.map(err => (this as any).formatError(err, '❌ ')).join('\n\n') || '';
+      const errorDetails = testRunInfo.errs.map((err) => (this as any).formatError(err, '❌ ')).join('\n\n') || '';
       // Screenshot paths are included as attachments
       const withoutScreenshot = errorDetails.replace(/^\s*Screenshot:.*\n?$/gm, '');
       // Prevent well meaning trim()s from disturbing the formatting
@@ -135,7 +135,7 @@ class TestCaseData {
     this.errorMessage = this.formattedErrorMessage.replace(/[\s\u2800]*Browser.*?([\n\u2800]*❌|$)/gs, ($0, $1) => $1);
 
     testRunInfo.screenshots = testRunInfo.screenshots?.map(
-      screenshot => (screenshot = { ...screenshot, screenshotPath: getOsIndependentRelativeFilePath(screenshot.screenshotPath) })
+      (screenshot) => (screenshot = { ...screenshot, screenshotPath: getOsIndependentRelativeFilePath(screenshot.screenshotPath) })
     );
 
     if (testRunInfo.quarantine && Object.entries(testRunInfo.quarantine).length > 1) {

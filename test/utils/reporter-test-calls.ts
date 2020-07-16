@@ -6,7 +6,7 @@ const ExternalAssertionLibraryError = require('testcafe').embeddingUtils.testRun
 const ActionElementNotFoundError = require('testcafe').embeddingUtils.testRunErrors.ActionElementNotFoundError;
 
 function makeErrors(errDescrs: Array<ErrorDescription>) {
-  return errDescrs.map(function(descr) {
+  return errDescrs.map(function (descr) {
     return new TestRunErrorFormattableAdapter(descr.err, descr.metaInfo);
   });
 }
