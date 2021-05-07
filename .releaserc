@@ -9,7 +9,7 @@
     [
       "@semantic-release/exec",
       {
-        "successCmd": "echo \"::set-env name=RELEASE_CREATED::true\""
+        "successCmd": "echo \"RELEASE_CREATED=true\" >> $GITHUB_ENV"
       }
     ]
   ]
