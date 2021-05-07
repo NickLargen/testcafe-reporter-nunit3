@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - run: npm ci
       - run: npm test
       - run: npx semantic-release
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v1
         if: env.RELEASE_CREATED
         with:
-          node-version: 12
+          node-version: 14
           registry-url: 'https://npm.pkg.github.com'
           scope: '@nicklargen'
       - run: 'echo $(node -p "const current = require(''./package.json''); JSON.stringify({...current, name: ''@nicklargen/'' + current.name})") > package.json'
