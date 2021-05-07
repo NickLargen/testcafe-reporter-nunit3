@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v3.0.0...v3.0.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* update dependencies ([7c9d8d5](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/7c9d8d5f19b1f6b52d84f2cab390d5492c7e38ea))
+
 # [3.0.0](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v2.0.2...v3.0.0) (2020-07-16)
 
 
