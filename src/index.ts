@@ -119,6 +119,7 @@ class TestCaseData {
   errorMessage: string;
   duration: number;
   hasFailureData: boolean;
+  hasMetaData: boolean;
   attachmentPaths?: string[];
   constructor(public name: string, public testRunInfo: TestRunInfo, private meta: Metadata, public formattedErrorMessage: string) {
     this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
@@ -146,6 +147,7 @@ class TestCaseData {
 
     this.duration = testRunInfo.durationMs / 1000;
     this.hasFailureData = !!this.errorMessage || !!this.formattedErrorMessage;
+    this.hasMetaData = !!this.meta && Object.keys(this.meta).length > 0;
   }
 }
 

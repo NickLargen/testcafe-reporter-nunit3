@@ -4,6 +4,13 @@
     <test-suite type="Assembly" name="{{name}}" start-time="{{startTime}}" end-time="{{endTime}}">
         {{#testCases}}
         <test-case name="{{name}}" fullname="{{../name}} - {{name}}" result="{{result}}" duration="{{duration}}">
+            {{#if hasMetaData}}
+            <properties>
+                {{#each meta}}
+                    <property name="{{@key}}" value="{{this}}" />
+                {{/each}}
+            </properties>
+            {{/if}}
             {{#if hasFailureData}}
             <failure>
                 <message>

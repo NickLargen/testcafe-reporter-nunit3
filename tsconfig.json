@@ -1,4 +1,6 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node 8+",
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "./lib",
@@ -10,7 +12,8 @@
     "moduleResolution": "node",
     "removeComments": true,
     "importHelpers": false,
-    "target": "ES5"
+    "target": "ES5",
+    "lib": ["es2020"]
   },
   "include": ["src"]
 }
