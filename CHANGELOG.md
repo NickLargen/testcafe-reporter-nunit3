@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v3.0.1...v3.1.0) (2022-11-14)
+
+
+### Features
+
+* include test metadata ([73ce4be](https://github.com/NickLargen/testcafe-reporter-nunit3/commit/73ce4be881c5fb364a5b2a69394a20e9ecb84606))
+
 ## [3.0.1](https://github.com/NickLargen/testcafe-reporter-nunit3/compare/v3.0.0...v3.0.1) (2021-05-07)
 
 
