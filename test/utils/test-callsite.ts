@@ -10,7 +10,7 @@ function functionThatThrowsUp() {
 
 try {
   functionThatThrowsUp();
-} catch (err) {
+} catch (err: any) {
   testCallsiteVariableLineNumberLength = createCallsiteRecord({ forError: err });
 }
 
@@ -20,6 +20,6 @@ const functionThatThrowsDown = () => {
 
 try {
   functionThatThrowsDown();
-} catch (err) {
+} catch (err: any) {
   testCallsiteAllLinesTwoDigitNumbers = createCallsiteRecord({ forError: err });
 }
