@@ -10,8 +10,8 @@ type ResultOption = 'Passed' | 'Failed' | 'Skipped' | 'Inconclusive';
 export = function () {
   return {
     noColors: true,
-    taskData: (null as unknown) as TaskData,
-    cleanupPrematureExit: (null as unknown) as () => void | null,
+    taskData: null as unknown as TaskData,
+    cleanupPrematureExit: null as unknown as () => void | null,
 
     addFailedCompletionCheck() {
       const completionCheckName = 'TEST RAN TO COMPLETION CHECK';

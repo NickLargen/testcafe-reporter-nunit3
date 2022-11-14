@@ -56,7 +56,7 @@ Run 3: Failed]]>
 ⠀   10 |
 ⠀   11 |try {
 ⠀   12 |  functionThatThrowsUp();
-⠀   13 |} catch (err) {
+⠀   13 |} catch (err: any) {
 ⠀
      at functionThatThrowsUp  (FILE_PATH:1:1)
      at Object.<anonymous>  (FILE_PATH:1:1)
@@ -67,7 +67,15 @@ Run 3: Failed]]>
      at Object.<anonymous>  (FILE_PATH:1:1)
      at Runtime._execModule  (FILE_PATH:1:1)
      at Runtime._loadModule  (FILE_PATH:1:1)
-     at Runtime.requireModule  (FILE_PATH:1:1)]]>
+     at Runtime.requireModule  (FILE_PATH:1:1)
+     at Runtime.requireModuleOrMock  (FILE_PATH:1:1)
+     at Object.<anonymous>  (FILE_PATH:1:1)
+     at Runtime._execModule  (FILE_PATH:1:1)
+     at Runtime._loadModule  (FILE_PATH:1:1)
+     at Runtime.requireModule  (FILE_PATH:1:1)
+     at jestAdapter  (FILE_PATH:1:1)
+     at runTestInternal  (FILE_PATH:1:1)
+     at runTest  (FILE_PATH:1:1)]]>
                 </stack-trace>
             </failure>
             <attachments>
@@ -137,24 +145,19 @@ exports[`Regression testing  should match for the example data used by the offic
                 <message>
                     <![CDATA[❌ A JavaScript error occurred on "http://example.org".
   Repeat test actions in the browser and check the console for errors.
-  To ignore client-side JavaScript errors, enable the "--skip-js-errors" CLI option, or set the "skipJsErrors" configuration file property to "true".
+  Enable the “skipJsErrors” option to ignore JavaScript errors during test execution. Learn more: "https://testcafe.io/documentation/404038/recipes/debugging/skip-javascript-errors"
   If the website only throws this error when you test it with TestCafe, please create a new issue at:
   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
 ⠀
   JavaScript error details:
   Some error
 ⠀
-❌ The specified selector does not match any element in the DOM tree.
-⠀
-⠀   | Lorem ipsum dolor sit amet, consectetur adipiscing ...)
-⠀ > |   one
-⠀   |   two
-⠀   |   three]]>
+❌ The specified selector does not match any element in the DOM tree.]]>
                 </message>
                 <stack-trace>
                     <![CDATA[❌ A JavaScript error occurred on "http://example.org".
   Repeat test actions in the browser and check the console for errors.
-  To ignore client-side JavaScript errors, enable the "--skip-js-errors" CLI option, or set the "skipJsErrors" configuration file property to "true".
+  Enable the “skipJsErrors” option to ignore JavaScript errors during test execution. Learn more: "https://testcafe.io/documentation/404038/recipes/debugging/skip-javascript-errors"
   If the website only throws this error when you test it with TestCafe, please create a new issue at:
   "https://github.com/DevExpress/testcafe/issues/new?template=bug-report.md".
 ⠀
@@ -173,7 +176,7 @@ exports[`Regression testing  should match for the example data used by the offic
 ⠀   10 |
 ⠀   11 |try {
 ⠀   12 |  functionThatThrowsUp();
-⠀   13 |} catch (err) {
+⠀   13 |} catch (err: any) {
 ⠀
      at functionThatThrowsUp  (FILE_PATH:1:1)
      at Object.<anonymous>  (FILE_PATH:1:1)
@@ -185,38 +188,18 @@ exports[`Regression testing  should match for the example data used by the offic
      at Runtime._execModule  (FILE_PATH:1:1)
      at Runtime._loadModule  (FILE_PATH:1:1)
      at Runtime.requireModule  (FILE_PATH:1:1)
-⠀
-❌ The specified selector does not match any element in the DOM tree.
-⠀
-⠀   | Lorem ipsum dolor sit amet, consectetur adipiscing ...)
-⠀ > |   one
-⠀   |   two
-⠀   |   three
-⠀
-  Browser: Firefox 47 / Mac OS X 10.10.1
-⠀
-⠀   13 |} catch (err) {
-⠀   14 |  testCallsiteVariableLineNumberLength = createCallsiteRecord({ forError: err });
-⠀   15 |}
-⠀   16 |
-⠀   17 |const functionThatThrowsDown = () => {
-⠀ > 18 |  throw Error('Wilson!');
-⠀   19 |};
-⠀   20 |
-⠀   21 |try {
-⠀   22 |  functionThatThrowsDown();
-⠀   23 |} catch (err) {
-⠀
-     at functionThatThrowsDown  (FILE_PATH:1:1)
-     at Object.<anonymous>  (FILE_PATH:1:1)
-     at Runtime._execModule  (FILE_PATH:1:1)
-     at Runtime._loadModule  (FILE_PATH:1:1)
-     at Runtime.requireModule  (FILE_PATH:1:1)
      at Runtime.requireModuleOrMock  (FILE_PATH:1:1)
      at Object.<anonymous>  (FILE_PATH:1:1)
      at Runtime._execModule  (FILE_PATH:1:1)
      at Runtime._loadModule  (FILE_PATH:1:1)
-     at Runtime.requireModule  (FILE_PATH:1:1)]]>
+     at Runtime.requireModule  (FILE_PATH:1:1)
+     at jestAdapter  (FILE_PATH:1:1)
+     at runTestInternal  (FILE_PATH:1:1)
+     at runTest  (FILE_PATH:1:1)
+⠀
+❌ The specified selector does not match any element in the DOM tree.
+⠀
+  Browser: Firefox 47 / Mac OS X 10.10.1]]>
                 </stack-trace>
             </failure>
         </test-case>
@@ -236,46 +219,13 @@ exports[`Regression testing  should match for the example data used by the offic
             <failure>
                 <message>
                     <![CDATA[❌ - Error in test.before hook -
-  The specified selector does not match any element in the DOM tree.
-⠀
-⠀   | Lorem ipsum dolor sit amet, consectetur adipiscing ...)
-⠀ > |   one
-⠀   |   two
-⠀   |   three]]>
+  The specified selector does not match any element in the DOM tree.]]>
                 </message>
                 <stack-trace>
                     <![CDATA[❌ - Error in test.before hook -
   The specified selector does not match any element in the DOM tree.
 ⠀
-⠀   | Lorem ipsum dolor sit amet, consectetur adipiscing ...)
-⠀ > |   one
-⠀   |   two
-⠀   |   three
-⠀
-  Browser: Firefox 47 / Mac OS X 10.10.1
-⠀
-⠀   13 |} catch (err) {
-⠀   14 |  testCallsiteVariableLineNumberLength = createCallsiteRecord({ forError: err });
-⠀   15 |}
-⠀   16 |
-⠀   17 |const functionThatThrowsDown = () => {
-⠀ > 18 |  throw Error('Wilson!');
-⠀   19 |};
-⠀   20 |
-⠀   21 |try {
-⠀   22 |  functionThatThrowsDown();
-⠀   23 |} catch (err) {
-⠀
-     at functionThatThrowsDown  (FILE_PATH:1:1)
-     at Object.<anonymous>  (FILE_PATH:1:1)
-     at Runtime._execModule  (FILE_PATH:1:1)
-     at Runtime._loadModule  (FILE_PATH:1:1)
-     at Runtime.requireModule  (FILE_PATH:1:1)
-     at Runtime.requireModuleOrMock  (FILE_PATH:1:1)
-     at Object.<anonymous>  (FILE_PATH:1:1)
-     at Runtime._execModule  (FILE_PATH:1:1)
-     at Runtime._loadModule  (FILE_PATH:1:1)
-     at Runtime.requireModule  (FILE_PATH:1:1)]]>
+  Browser: Firefox 47 / Mac OS X 10.10.1]]>
                 </stack-trace>
             </failure>
         </test-case>
