@@ -2,8 +2,22 @@
 <test-run id="2" name="TestCafe Tests" start-time="{{startTime}}" end-time="{{endTime}}">
     {{#fixtures}}
     <test-suite type="Assembly" name="{{name}}" start-time="{{startTime}}" end-time="{{endTime}}">
+        {{#if hasMetadata}}
+        <properties>
+            {{#each meta}}
+            <property name="{{@key}}" value="{{this}}" />
+            {{/each}}
+        </properties>
+        {{/if}}
         {{#testCases}}
         <test-case name="{{name}}" fullname="{{../name}} - {{name}}" result="{{result}}" duration="{{duration}}">
+            {{#if hasMetadata}}
+            <properties>
+                {{#each meta}}
+                <property name="{{@key}}" value="{{this}}" />
+                {{/each}}
+            </properties>
+            {{/if}}
             {{#if hasFailureData}}
             <failure>
                 <message>

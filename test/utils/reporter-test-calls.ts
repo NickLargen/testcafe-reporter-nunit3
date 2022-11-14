@@ -142,7 +142,7 @@ export const sampleCalls: CallSequence = [
   },
   {
     method: 'reportFixtureStart',
-    args: ['Third fixture', './fixture3.js'],
+    args: ['Third fixture', './fixture3.js', { customFixtureMetadata: 'This is my favorite fixture.' }],
   },
   {
     method: 'reportTestDone',
@@ -168,6 +168,10 @@ export const sampleCalls: CallSequence = [
         unstable: true,
         screenshotPath: null,
       },
+      {
+        customTestMetadata: 'This is my second favorite test.',
+        butWaitTheresMore: '300ms'
+      }
     ],
   },
   {
