@@ -107,10 +107,12 @@ class FixtureData {
   testCases: TestCaseData[];
   startTime: string;
   endTime?: string;
+  hasMetadata: boolean;
 
   constructor(public name: string, public path: string, private meta: Metadata) {
     this.startTime = new Date().toISOString();
     this.testCases = [];
+    this.hasMetadata = this.meta && Object.keys(this.meta).length > 0;
   }
 }
 
@@ -119,6 +121,7 @@ class TestCaseData {
   errorMessage: string;
   duration: number;
   hasFailureData: boolean;
+  hasMetadata: boolean;
   attachmentPaths?: string[];
   constructor(public name: string, public testRunInfo: TestRunInfo, private meta: Metadata, public formattedErrorMessage: string) {
     this.result = testRunInfo.skipped ? 'Skipped' : testRunInfo.errs.length > 0 ? 'Failed' : testRunInfo.unstable ? 'Inconclusive' : 'Passed';
@@ -146,6 +149,7 @@ class TestCaseData {
 
     this.duration = testRunInfo.durationMs / 1000;
     this.hasFailureData = !!this.errorMessage || !!this.formattedErrorMessage;
+    this.hasMetadata = this.meta && Object.keys(this.meta).length > 0;
   }
 }
 

@@ -215,7 +215,14 @@ exports[`Regression testing  should match for the example data used by the offic
         </test-case>
     </test-suite>
     <test-suite type="Assembly" name="Third fixture" start-time="2077-03-14T03:14:15.926Z" end-time="2077-03-14T03:14:15.926Z">
+        <properties>
+            <property name="customFixtureMetadata" value="This is my favorite fixture." />
+        </properties>
         <test-case name="First test in third fixture" fullname="Third fixture - First test in third fixture" result="Failed" duration="74">
+            <properties>
+                <property name="customTestMetadata" value="This is my second favorite test." />
+                <property name="butWaitTheresMore" value="300ms" />
+            </properties>
             <failure>
                 <message>
                     <![CDATA[❌ - Error in test.before hook -
